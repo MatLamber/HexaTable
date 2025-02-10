@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
-
+#if UNITY_EDITOR
+using UnityEditor;
 public class GirdGenerator : MonoBehaviour
 {
     [Header("Elements")]
@@ -26,9 +27,14 @@ public class GirdGenerator : MonoBehaviour
                Vector3 spawnPost =  grid.CellToWorld(new Vector3Int(x, y, 0));
                if (spawnPost.magnitude > grid.CellToWorld(new Vector3Int(1,0,0)).magnitude * gridSize)
                 continue;
-               Instantiate(hexagon, spawnPost, Quaternion.identity, transform);
+               //Instantiate(hexagon, spawnPost, Quaternion.identity, transform);
+               GameObject gridHexInstance = (GameObject) PrefabUtility.InstantiatePrefab(hexagon);
+               gridHexInstance.transform.position = spawnPost;
+               gridHexInstance.transform.rotation = Quaternion.identity;
+               gridHexInstance.transform.SetParent(transform);
             }
         }
         
     }
 }
+#endif
