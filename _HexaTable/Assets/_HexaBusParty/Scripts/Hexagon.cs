@@ -26,6 +26,12 @@ public class Hexagon : MonoBehaviour
         set => renderer.material.mainTexture = value;
     }
 
+    public Color Color
+    {
+        get => renderer.material.color;
+        set => renderer.material.color = value;
+    }
+
     public Toping Toping
     {
         get => toping;

@@ -10,13 +10,14 @@ public class GridCell : MonoBehaviour
 
     [Header("Elements")]
     [SerializeField] private Hexagon hexagon;
-    private Renderer renderer = new Renderer();
+    [SerializeField] private Renderer renderer = new Renderer();
     private Color originalGridColor;
 
     [FormerlySerializedAs("colors")]
     [Header("Data")]
     [OnValueChanged(nameof(GenerateInitialHexagons))]
     [SerializeField] private Texture[] toppingTextures;
+    private Color selecetedColor = new Color(0.4784313f, 0.4941176f, 0.5098039f, 1);
     public HexStack Stack { get; private set; }
     
     public bool IsOccupied { get => Stack != null; private set {} }
@@ -24,18 +25,17 @@ public class GridCell : MonoBehaviour
 
     private void Start()
     {
-        renderer = GetComponentInChildren<Renderer>();
+       // renderer = GetComponentInChildren<Renderer>();
         originalGridColor = renderer.material.color;
         Stack = transform.childCount > 1 ? transform.GetChild(1).GetComponent<HexStack>() : null;
         if (Stack != null)
             Stack.Initialize(this);
     }
 
-    public void ChangeGridColor(Color color )
+    public void ChangeGridColor()
     {
-        if (color == null) 
-            color = Color.white;
-        renderer.material.color = color;
+
+        renderer.material.color = selecetedColor;
     }
 
     public void ResetGridColor()

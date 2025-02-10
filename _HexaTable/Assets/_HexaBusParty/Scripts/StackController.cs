@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class StackController : MonoBehaviour
@@ -88,11 +89,13 @@ public class StackController : MonoBehaviour
         currentStack.transform.position =
             Vector3.MoveTowards(currentStack.transform.position, currenTargerPostion, Time.deltaTime * 30);
         targetCell = gridCell;
-        targetCell.ChangeGridColor(Color.white);
+        targetCell.ChangeGridColor();
     }
 
     private void DraggingAboveGround()
     {
+        if (targetCell != null)
+            targetCell.ResetGridColor();
         RaycastHit hit;
         Physics.Raycast(GetClickedRay(), out hit, 500, groundLayer);
         if (hit.collider == null)
@@ -122,6 +125,7 @@ public class StackController : MonoBehaviour
         targetCell.AssignStack(currentStack);
         currentStack.OccupyCurrentGridCell(targetCell);
         onStackedPlaced?.Invoke(targetCell);
+        targetCell.ResetGridColor();
         targetCell = null;
         currentStack = null;
     }

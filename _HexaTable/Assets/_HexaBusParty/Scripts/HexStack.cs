@@ -25,11 +25,11 @@ public class HexStack : MonoBehaviour
     {
         foreach (var hexagon in Hexagons)
         {
-            // hexagon.DisableCollider();
+             hexagon.DisableCollider();
         }
     }
 
-    public Texture GetTopHexagonColor()
+    public Texture GetTopHexagonTexture()
     {
         return Hexagons[^1].ToppingTexture;
     }
@@ -76,5 +76,10 @@ public class HexStack : MonoBehaviour
            onCheckForFreeSeats?.Invoke(baseHexagon.transform);
         }
         
+    }
+
+    public Color GetTopHexagonColor()
+    {
+        return Hexagons[^1].Color;
     }
 }
