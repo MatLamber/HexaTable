@@ -131,4 +131,9 @@ public class StackController : MonoBehaviour
     }
     
     private Ray GetClickedRay() => Camera.main.ScreenPointToRay(Input.mousePosition);
+
+    public void DebugEvents()
+    {
+        Debug.Log($"Debug Event");
+    }
 }
