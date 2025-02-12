@@ -37,6 +37,16 @@ public class TabletopCharacter : MonoBehaviour
 
     }
 
+    private void OnEnable()
+    {
+        StackController.onStackedPlaced += OnStackPlaced;
+    }
+
+    private void OnDisable()
+    {
+        StackController.onStackedPlaced -= OnStackPlaced;
+    }
+
     public void TriggerSquareEffect(int multiplier)
     {
         GameController.Instance.CurrentMultiplier = multiplier;
@@ -51,11 +61,16 @@ public class TabletopCharacter : MonoBehaviour
 
     IEnumerator ManageFollowing()
     {
+        yield return new WaitForSeconds(0f);
         follower.follow = false;
-        yield return new WaitForSeconds(0.5f);
+
+    }
+
+
+    public void OnStackPlaced(GridCell gridCell)
+    {
         follower.follow = true;
-        if (LeanTween.isTweening(gameObject)) yield break;
-        follower.follow = true;
+        if (LeanTween.isTweening(gameObject)) return;
         feedbacksPlayer.PlayFeedbacks();
         LeanTween.moveY(model, transform.position.y + 3f, jumpForce)
             .setEase(LeanTweenType.easeOutQuad).setLoopPingPong(1);
