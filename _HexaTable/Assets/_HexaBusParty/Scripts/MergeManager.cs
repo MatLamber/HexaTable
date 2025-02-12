@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using MoreMountains.Tools;
 using UnityEngine;
 
 public class MergeManager : MonoBehaviour
 {
-    [Header("Elements")] private List<GridCell> updateCells = new List<GridCell>();
+    [Header("Elements")] 
+    private List<GridCell> updateCells = new List<GridCell>();
+    [SerializeField] private MMSimpleObjectPooler pointTextPool;
     [Header("Settings")] [SerializeField] private ToppingType comparasionType;
+    
 
     private void OnEnable()
     {
@@ -85,6 +89,10 @@ public class MergeManager : MonoBehaviour
         float delay = 0;
         if (CompletedStackGenerator.Instance != null)
             CompletedStackGenerator.Instance.PickFreeStackPosition(similarHexaongs[0]);
+        GameObject pointText = pointTextPool.GetPooledGameObject();
+        pointText.transform.position = similarHexaongs[0].transform.position;
+        pointText.GetComponent<PointsText>().SetAmount(100 * similarHexaongsCount);
+        pointText.SetActive(true);
         while (similarHexaongs.Count > 0)
         {
             if (CompletedStackGenerator.Instance != null)
@@ -122,6 +130,10 @@ public class MergeManager : MonoBehaviour
         float delay = 0;
         if (CompletedStackGenerator.Instance != null)
             CompletedStackGenerator.Instance.PickFreeStackPosition(similarHexaongs[0]);
+        GameObject pointText = pointTextPool.GetPooledGameObject();
+        pointText.transform.position = similarHexaongs[0].transform.position;
+        pointText.GetComponent<PointsText>().SetAmount(100 * similarHexaongsCount);
+        pointText.SetActive(true);
         while (similarHexaongs.Count > 0)
         {
             if (CompletedStackGenerator.Instance != null)

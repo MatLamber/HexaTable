@@ -6,8 +6,16 @@ using Dreamteck.Splines;
 using MoreMountains.Feedbacks;
 using UnityEngine;
 
+[Serializable] public enum SquareEffects
+{
+    None,
+    Multiplier,
+    Divider
+}
 public class TabletopCharacter : MonoBehaviour
 {
+    
+
     [Header("Elements")] 
     [SerializeField] private GameObject model;
     [SerializeField] private MMF_Player feedbacksPlayer;
@@ -25,14 +33,20 @@ public class TabletopCharacter : MonoBehaviour
 
     public void Jump()
     {
-
         StartCoroutine(ManageFollowing());
 
     }
-    
-    public void ManageFollower()
-    {
 
+    public void TriggerSquareEffect(int multiplier)
+    {
+        GameController.Instance.CurrentMultiplier = multiplier;
+        UIController.Instance.SetCurrentMultiplier();
+    }
+
+    public void SetTriggerEffectType(int effectType)
+    {
+        GameController.Instance.CurrentMultiplier = effectType;
+        UIController.Instance.SetCurrentMultiplier();
     }
 
     IEnumerator ManageFollowing()

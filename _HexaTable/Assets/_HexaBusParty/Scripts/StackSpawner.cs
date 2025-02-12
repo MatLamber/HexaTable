@@ -75,7 +75,7 @@ public class StackSpawner : MonoBehaviour
             ApplyHexagonsWithColors(amount, firstColorHexagonCount, colorArray, hexStack);
         }
 
-        LeanTween.moveLocalX(stackPositionsParent.gameObject, 0, 1f).setEaseOutSine().setDelay(0.05f);
+       // LeanTween.moveLocalX(stackPositionsParent.gameObject, 0, 1f).setEaseOutSine().setDelay(0.05f);
     }
 
     private void ApplyHexagonsWithTextures(int amount, int firstColorHexagonCount, Texture[] texturesArray,

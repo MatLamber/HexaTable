@@ -67,6 +67,11 @@ public class Hexagon : MonoBehaviour
     {
         LeanTween.cancel(gameObject);
         LeanTween.scale(gameObject, Vector3.zero, 0.2f).setDelay(delay).setEase(LeanTweenType.easeInSine)
-            .setOnComplete(() => Destroy(gameObject));
+            .setOnComplete(() =>
+            {
+                EventsManager.Instance.OnPointsEarned(100);
+                Destroy(gameObject);
+            });
+    
     }
 }
