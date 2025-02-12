@@ -4789,8 +4789,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655789879}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0030058129, y: -0.824322, z: 0.0043769176, w: 0.5660964}
-  m_LocalPosition: {x: -3.238117, y: 0.06961409, z: 3.6128438}
+  m_LocalRotation: {x: 0.0008230236, y: -0.7481555, z: 0.0009280013, w: 0.66352236}
+  m_LocalPosition: {x: -1.6003175, y: 0.0792313, z: 3.9683044}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4884,17 +4884,17 @@ MonoBehaviour:
   targetRigidbody2D: {fileID: 0}
   targetTransform: {fileID: 1655789880}
   _result:
-    position: {x: -3.238117, y: 0.06961409, z: 3.6128438}
+    position: {x: -1.6003175, y: 0.0792313, z: 3.9683044}
     up: {x: 0, y: 1, z: 0}
-    forward: {x: -0.9332651, y: -0.010619138, z: -0.35903138}
+    forward: {x: -0.99283415, y: -0.0024807672, z: -0.11947443}
     color: {r: 1, g: 1, b: 1, a: 1}
     size: 1
-    percent: 0
+    percent: 0.9580000042915344
   wrapMode: 1
   followMode: 0
   autoStartPosition: 0
   _follow: 0
-  _startPosition: 0
+  _startPosition: 0.9580000042915344
   preserveUniformSpeedWithOffset: 0
   _followSpeed: 6
   _followDuration: 1
