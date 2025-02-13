@@ -6,11 +6,12 @@ using Dreamteck.Splines;
 using MoreMountains.Feedbacks;
 using UnityEngine;
 
-[Serializable] public enum SquareEffects
+[Serializable] public enum ModifierType
 {
-    None,
-    Multiplier,
-    Divider
+    Add,
+    Substract,
+    Multiply,
+    Divide
 }
 public class TabletopCharacter : MonoBehaviour
 {
@@ -47,16 +48,15 @@ public class TabletopCharacter : MonoBehaviour
         StackController.onStackedPlaced -= OnStackPlaced;
     }
 
-    public void TriggerSquareEffect(int multiplier)
+    public void TriggerSquareEffect(int modifierValue)
     {
-        GameController.Instance.CurrentMultiplier = multiplier;
+        GameController.Instance.CurrentModifier = modifierValue;
         UIController.Instance.SetCurrentMultiplier();
     }
 
     public void SetTriggerEffectType(int effectType)
     {
-        GameController.Instance.CurrentMultiplier = effectType;
-        UIController.Instance.SetCurrentMultiplier();
+       GameController.Instance.CurrentModifierType = (ModifierType) effectType;
     }
 
     IEnumerator ManageFollowing()
