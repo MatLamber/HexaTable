@@ -6,26 +6,21 @@ using UnityEngine;
 
 public class PointsText : MonoBehaviour
 {
-    [Header("Elements")] [SerializeField] private TextMeshPro pointsText;
-    [SerializeField] private TextMeshPro multiPlierText;
-    [Header("Data")] private Vector3 startPosition;
-    private Vector3 startLocalScale;
-    private int pointsEarned;
-    private int multiplier;
+    [Header("Elements")] 
+    [SerializeField] private TextMeshPro pointsText;
+    [Header("Data")]
+    private Vector3 startPosition;
 
-
+    
     void OnEnable()
     {
         startPosition = transform.position;
-        startLocalScale = transform.localScale;
-        MoveYAndFade(5f, 0.5f);
+        MoveYAndFade(5f, 1f);
     }
 
     private void OnDisable()
     {
         transform.position = startPosition;
-        transform.localScale = startLocalScale;
-        multiPlierText.transform.localScale = Vector3.zero;
     }
 
     public void MoveYAndFade(float yOffset, float duration)
@@ -39,42 +34,11 @@ public class PointsText : MonoBehaviour
             Color color = pointsText.color;
             color.a = alpha;
             pointsText.color = color;
-        }).setOnComplete(() =>
-            {
-                LeanTween.scale(multiPlierText.gameObject, Vector3.one, 0.3f).setEaseOutBounce().setOnComplete( (() =>
-                {
-                    LeanTween.value(gameObject, pointsEarned, pointsEarned * multiplier, 0.3f).setOnUpdate(AddPoints)
-                        .setOnComplete(() => DisableObject());
-                }));
-
-            }
-        );
+        });
     }
-
-    public void SetAmount(int amount)
+    
+    public void SetAmount (int amount)
     {
         pointsText.text = $"+{amount.ToString()}";
-        pointsEarned = amount;
-        multiplier = GameController.Instance.CurrentModifier;
-        multiPlierText.text = $" x{multiplier}";
-    }
-
-    public void AddPoints(float value)
-    {
-        pointsEarned = (int)value;
-        pointsText.text = $"+{pointsEarned.ToString()}";
-    }
-
-
-    public void DisableObject()
-    {
-        StartCoroutine(DisableObjectCoroutine());
-    }
-
-    IEnumerator DisableObjectCoroutine()
-    {
-        LeanTween.scale(gameObject, transform.localScale * 1.3f, 0.3f).setEaseOutBounce();
-        yield return new WaitForSeconds(0.6f);
-        gameObject.SetActive(false);
     }
 }
