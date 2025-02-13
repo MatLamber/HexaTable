@@ -21,23 +21,15 @@ public class GameController : MonoBehaviour
     [Header("Data")] 
     [SerializeField] private int goalPoints;
     private int points;
-    private int currentModifierValue;
-    private ModifierType currentModifierType;
-    
+    private int currentMultiplier;
     
     public int GoalPoints => goalPoints;
     public int Points => points;
 
-    public int CurrentModifier
+    public int CurrentMultiplier
     {
-        get => currentModifierValue;
-        set => currentModifierValue = value;
-    }
-    
-    public ModifierType CurrentModifierType
-    {
-        get => currentModifierType;
-        set => currentModifierType = value;
+        get => currentMultiplier;
+        set => currentMultiplier = value;
     }
 
 
@@ -65,7 +57,7 @@ public class GameController : MonoBehaviour
 
     private void OnPointsEarned(int  pointsEarned)
     {
-        points += pointsEarned * currentModifierValue;
+        points += pointsEarned;
         EventsManager.Instance.OnRefreshUI();
     }
 }

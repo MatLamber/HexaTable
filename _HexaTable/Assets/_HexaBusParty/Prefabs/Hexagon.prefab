@@ -31,6 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4458516820399465685}
+  - {fileID: 7397767514702342630}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9134854308624643871
@@ -45,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a425a6a7975584870ba67d842359e9e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 3284524569634561978}
-  collider: {fileID: 8050231505175898594}
+  renderer: {fileID: 8566139513806393993}
+  collider: {fileID: 4856295023711131604}
   unstackable: 0
   toping: 0
 --- !u!1 &3932774703566159471
@@ -68,7 +69,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4458516820399465685
 Transform:
   m_ObjectHideFlags: 0
