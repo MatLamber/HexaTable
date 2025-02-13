@@ -15,7 +15,7 @@ public class PointsText : MonoBehaviour
     void OnEnable()
     {
         startPosition = transform.position;
-        MoveYAndFade(5f, 1f);
+        MoveYAndFade(5f, 0.5f);
     }
 
     private void OnDisable()
@@ -34,11 +34,25 @@ public class PointsText : MonoBehaviour
             Color color = pointsText.color;
             color.a = alpha;
             pointsText.color = color;
-        });
+        }).setOnComplete((() =>
+        {
+            Disable();
+        }));
     }
     
     public void SetAmount (int amount)
     {
         pointsText.text = $"+{amount.ToString()}";
+    }
+
+    public void Disable()
+    {
+        StartCoroutine(DisableCoroutine());
+    }
+
+    IEnumerator DisableCoroutine()
+    {
+        yield return new WaitForSeconds(0.5f);
+        gameObject.SetActive(false);
     }
 }
