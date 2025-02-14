@@ -58,6 +58,6 @@ public class UIController : MonoBehaviour
 
     public void SetCurrentMultiplier()
     {
-        currentMultiplierText.text = $" current multiplier : {GameController.Instance.currentModifier}";
+        currentMultiplierText.text = $" current multiplier : {GameController.Instance.CurrentModifierValue}";
     }
 }

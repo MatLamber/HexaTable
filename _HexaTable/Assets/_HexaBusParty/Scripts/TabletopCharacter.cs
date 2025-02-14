@@ -8,9 +8,10 @@ using UnityEngine;
 
 [Serializable] public enum ModifierType
 {
-    None,
-    Multiplier,
-    Divider
+    Add,
+    Substract,
+    Divide,
+    Multiply,
 }
 public class TabletopCharacter : MonoBehaviour
 {
@@ -47,15 +48,15 @@ public class TabletopCharacter : MonoBehaviour
         StackController.onStackedPlaced -= OnStackPlaced;
     }
 
-    public void TriggerSquareEffect(int multiplier)
+    public void SetModifierValue(int value)
     {
-        GameController.Instance.CurrentModifier = multiplier;
+        GameController.Instance.CurrentModifierValue = value;
         UIController.Instance.SetCurrentMultiplier();
     }
 
-    public void SetTriggerEffectType(int effectType)
+    public void SetModifierType(int modifierType)
     {
-        GameController.Instance.CurrentModifierType = (ModifierType)effectType;
+        GameController.Instance.CurrentModifierType = (ModifierType)modifierType;
     }
 
     IEnumerator ManageFollowing()

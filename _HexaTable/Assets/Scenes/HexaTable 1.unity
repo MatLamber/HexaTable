@@ -3212,7 +3212,7 @@ MonoBehaviour:
             m_CallState: 2
           - m_Target: {fileID: 1655789882}
             m_TargetAssemblyTypeName: TabletopCharacter, Assembly-CSharp
-            m_MethodName: TriggerSquareEffect
+            m_MethodName: SetModifierValue
             m_Mode: 3
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -3245,7 +3245,7 @@ MonoBehaviour:
             m_CallState: 2
           - m_Target: {fileID: 1655789882}
             m_TargetAssemblyTypeName: TabletopCharacter, Assembly-CSharp
-            m_MethodName: SetTriggerEffectType
+            m_MethodName: SetModifierType
             m_Mode: 3
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -3278,7 +3278,7 @@ MonoBehaviour:
             m_CallState: 2
           - m_Target: {fileID: 1655789882}
             m_TargetAssemblyTypeName: TabletopCharacter, Assembly-CSharp
-            m_MethodName: SetTriggerEffectType
+            m_MethodName: SetModifierType
             m_Mode: 3
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -3311,7 +3311,7 @@ MonoBehaviour:
             m_CallState: 2
           - m_Target: {fileID: 1655789882}
             m_TargetAssemblyTypeName: TabletopCharacter, Assembly-CSharp
-            m_MethodName: SetTriggerEffectType
+            m_MethodName: SetModifierType
             m_Mode: 3
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -3344,7 +3344,7 @@ MonoBehaviour:
             m_CallState: 2
           - m_Target: {fileID: 1655789882}
             m_TargetAssemblyTypeName: TabletopCharacter, Assembly-CSharp
-            m_MethodName: SetTriggerEffectType
+            m_MethodName: SetModifierType
             m_Mode: 3
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -3377,7 +3377,7 @@ MonoBehaviour:
             m_CallState: 2
           - m_Target: {fileID: 1655789882}
             m_TargetAssemblyTypeName: TabletopCharacter, Assembly-CSharp
-            m_MethodName: SetTriggerEffectType
+            m_MethodName: SetModifierType
             m_Mode: 3
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -3410,7 +3410,7 @@ MonoBehaviour:
             m_CallState: 2
           - m_Target: {fileID: 1655789882}
             m_TargetAssemblyTypeName: TabletopCharacter, Assembly-CSharp
-            m_MethodName: SetTriggerEffectType
+            m_MethodName: SetModifierType
             m_Mode: 3
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -3443,7 +3443,7 @@ MonoBehaviour:
             m_CallState: 2
           - m_Target: {fileID: 1655789882}
             m_TargetAssemblyTypeName: TabletopCharacter, Assembly-CSharp
-            m_MethodName: SetTriggerEffectType
+            m_MethodName: SetModifierType
             m_Mode: 3
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -3476,7 +3476,7 @@ MonoBehaviour:
             m_CallState: 2
           - m_Target: {fileID: 1655789882}
             m_TargetAssemblyTypeName: TabletopCharacter, Assembly-CSharp
-            m_MethodName: SetTriggerEffectType
+            m_MethodName: SetModifierType
             m_Mode: 3
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -3509,7 +3509,7 @@ MonoBehaviour:
             m_CallState: 2
           - m_Target: {fileID: 1655789882}
             m_TargetAssemblyTypeName: TabletopCharacter, Assembly-CSharp
-            m_MethodName: SetTriggerEffectType
+            m_MethodName: SetModifierType
             m_Mode: 3
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -3542,7 +3542,7 @@ MonoBehaviour:
             m_CallState: 2
           - m_Target: {fileID: 1655789882}
             m_TargetAssemblyTypeName: TabletopCharacter, Assembly-CSharp
-            m_MethodName: SetTriggerEffectType
+            m_MethodName: SetModifierType
             m_Mode: 3
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -3575,7 +3575,7 @@ MonoBehaviour:
             m_CallState: 2
           - m_Target: {fileID: 1655789882}
             m_TargetAssemblyTypeName: TabletopCharacter, Assembly-CSharp
-            m_MethodName: SetTriggerEffectType
+            m_MethodName: SetModifierType
             m_Mode: 3
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -3608,7 +3608,7 @@ MonoBehaviour:
             m_CallState: 2
           - m_Target: {fileID: 1655789882}
             m_TargetAssemblyTypeName: TabletopCharacter, Assembly-CSharp
-            m_MethodName: SetTriggerEffectType
+            m_MethodName: SetModifierType
             m_Mode: 3
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -3641,7 +3641,7 @@ MonoBehaviour:
             m_CallState: 2
           - m_Target: {fileID: 1655789882}
             m_TargetAssemblyTypeName: TabletopCharacter, Assembly-CSharp
-            m_MethodName: SetTriggerEffectType
+            m_MethodName: SetModifierType
             m_Mode: 3
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -3674,7 +3674,7 @@ MonoBehaviour:
             m_CallState: 2
           - m_Target: {fileID: 1655789882}
             m_TargetAssemblyTypeName: TabletopCharacter, Assembly-CSharp
-            m_MethodName: SetTriggerEffectType
+            m_MethodName: SetModifierType
             m_Mode: 3
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -3707,7 +3707,7 @@ MonoBehaviour:
             m_CallState: 2
           - m_Target: {fileID: 1655789882}
             m_TargetAssemblyTypeName: TabletopCharacter, Assembly-CSharp
-            m_MethodName: SetTriggerEffectType
+            m_MethodName: SetModifierType
             m_Mode: 3
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -3740,7 +3740,7 @@ MonoBehaviour:
             m_CallState: 2
           - m_Target: {fileID: 1655789882}
             m_TargetAssemblyTypeName: TabletopCharacter, Assembly-CSharp
-            m_MethodName: SetTriggerEffectType
+            m_MethodName: SetModifierType
             m_Mode: 3
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -3773,7 +3773,7 @@ MonoBehaviour:
             m_CallState: 2
           - m_Target: {fileID: 1655789882}
             m_TargetAssemblyTypeName: TabletopCharacter, Assembly-CSharp
-            m_MethodName: SetTriggerEffectType
+            m_MethodName: SetModifierType
             m_Mode: 3
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -3806,7 +3806,7 @@ MonoBehaviour:
             m_CallState: 2
           - m_Target: {fileID: 1655789882}
             m_TargetAssemblyTypeName: TabletopCharacter, Assembly-CSharp
-            m_MethodName: SetTriggerEffectType
+            m_MethodName: SetModifierType
             m_Mode: 3
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -3839,7 +3839,7 @@ MonoBehaviour:
             m_CallState: 2
           - m_Target: {fileID: 1655789882}
             m_TargetAssemblyTypeName: TabletopCharacter, Assembly-CSharp
-            m_MethodName: SetTriggerEffectType
+            m_MethodName: SetModifierType
             m_Mode: 3
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
