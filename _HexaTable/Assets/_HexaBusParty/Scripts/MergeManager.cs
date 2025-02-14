@@ -89,10 +89,12 @@ public class MergeManager : MonoBehaviour
         float delay = 0;
         if (CompletedStackGenerator.Instance != null)
             CompletedStackGenerator.Instance.PickFreeStackPosition(similarHexaongs[0]);
-        GameObject pointText = pointTextPool.GetPooledGameObject();
+        /*GameObject pointText = pointTextPool.GetPooledGameObject();
         pointText.transform.position = similarHexaongs[0].transform.position;
         pointText.GetComponent<PointsText>().SetAmount(100 * similarHexaongsCount);
-        pointText.SetActive(true);
+        pointText.SetActive(true);*/
+        UIController.Instance.ShowResultPanel(100 * similarHexaongsCount);
+        EventsManager.Instance.OnStackCompleted();
         while (similarHexaongs.Count > 0)
         {
             if (CompletedStackGenerator.Instance != null)
@@ -109,6 +111,7 @@ public class MergeManager : MonoBehaviour
         yield return new WaitForSeconds((similarHexaongsCount + 1) * .1f + .3f);
         if (CompletedStackGenerator.Instance != null)
             CompletedStackGenerator.Instance.ResetFreeStackPositions();
+        EventsManager.Instance.OnApplyMultiplier(100 * similarHexaongsCount);
     }
     
     IEnumerator CheckForCompleteStacks(GridCell gridCell, Color gridCellTopHexagonColor)
@@ -130,10 +133,12 @@ public class MergeManager : MonoBehaviour
         float delay = 0;
         if (CompletedStackGenerator.Instance != null)
             CompletedStackGenerator.Instance.PickFreeStackPosition(similarHexaongs[0]);
-        GameObject pointText = pointTextPool.GetPooledGameObject();
+        /*GameObject pointText = pointTextPool.GetPooledGameObject();
         pointText.transform.position = similarHexaongs[0].transform.position;
         pointText.GetComponent<PointsText>().SetAmount(100 * similarHexaongsCount);
-        pointText.SetActive(true);
+        pointText.SetActive(true);*/
+        UIController.Instance.ShowResultPanel(100 * similarHexaongsCount);
+        EventsManager.Instance.OnStackCompleted();
         while (similarHexaongs.Count > 0)
         {
             if (CompletedStackGenerator.Instance != null)
@@ -150,6 +155,7 @@ public class MergeManager : MonoBehaviour
         yield return new WaitForSeconds((similarHexaongsCount + 1) * .1f + .3f);
         if (CompletedStackGenerator.Instance != null)
             CompletedStackGenerator.Instance.ResetFreeStackPositions();
+        EventsManager.Instance.OnApplyMultiplier(100 * similarHexaongsCount);
     }
 
 

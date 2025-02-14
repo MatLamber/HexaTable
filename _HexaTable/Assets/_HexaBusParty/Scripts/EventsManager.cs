@@ -10,6 +10,9 @@ public class EventsManager : MonoBehaviour
     public event Action <int> onPointsEarned;
     public event Action onRefresUI;
     public event Action<int> onLandOnMultiplier;
+
+    public event Action onStackCompleted;
+    public event Action <int> onApplyMultiplier;
     
     public static EventsManager Instance 
     {
@@ -40,5 +43,7 @@ public class EventsManager : MonoBehaviour
     public void OnRefreshUI() => onRefresUI?.Invoke();
     
     public void OnLandOnMultiplier(int multiplier) => onLandOnMultiplier?.Invoke(multiplier);
+    public void OnStackCompleted() => onStackCompleted?.Invoke();
+    public void OnApplyMultiplier(int amount) => onApplyMultiplier?.Invoke(amount);
 
 }

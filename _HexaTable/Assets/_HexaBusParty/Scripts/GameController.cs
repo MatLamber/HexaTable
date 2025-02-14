@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     private static GameController _instance;
+
     public static GameController Instance
     {
         get
@@ -14,18 +15,20 @@ public class GameController : MonoBehaviour
             {
                 Debug.LogError("GameController is not initialized!");
             }
+
             return _instance;
         }
     }
 
-    [Header("Data")] 
-    [SerializeField] private int goalPoints;
+    [Header("Data")] [SerializeField] private int goalPoints;
     private int points;
-    private int _currentModifierValueValue;
-    private ModifierType currentModifierType;
-    
+    private int prevPoints;
+    [SerializeField] private int _currentModifierValueValue;
+    [SerializeField] private ModifierType currentModifierType;
+
     public int GoalPoints => goalPoints;
     public int Points => points;
+    public int PrevPoints => prevPoints;
 
     public int CurrentModifierValue
     {
@@ -54,31 +57,39 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        EventsManager.Instance.onPointsEarned += OnPointsEarned;
+        EventsManager.Instance.onApplyMultiplier += OnPointsEarned;
+
     }
 
     private void OnDisable()
     {
-        EventsManager.Instance.onPointsEarned -= OnPointsEarned;
+        EventsManager.Instance.onApplyMultiplier -= OnPointsEarned;
     }
 
-    private void OnPointsEarned(int  pointsEarned)
+    private void OnPointsEarned(int pointsEarned)
+    {
+        prevPoints = points;    
+        points += pointsEarned;
+        ApplyEffect();
+        EventsManager.Instance.OnRefreshUI();
+    }
+
+    private void ApplyEffect()
     {
         switch (currentModifierType)
         {
             case ModifierType.Add:
-                points += pointsEarned + _currentModifierValueValue;
+                points += _currentModifierValueValue;
                 break;
             case ModifierType.Substract:
-                points += pointsEarned - _currentModifierValueValue;
+                points -=  _currentModifierValueValue;
                 break;
             case ModifierType.Multiply:
-                points += pointsEarned * _currentModifierValueValue;
+                points *= _currentModifierValueValue;
                 break;
             case ModifierType.Divide:
-                points += pointsEarned / _currentModifierValueValue;   
+                points /= _currentModifierValueValue;
                 break;
         }
-        EventsManager.Instance.OnRefreshUI();
     }
 }
