@@ -1668,6 +1668,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2096123081}
     m_Modifications:
+    - target: {fileID: -8765330362168630246, guid: 367d4019c4702b0488ff2db85ffcc90b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 367d4019c4702b0488ff2db85ffcc90b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1730,6 +1735,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 02b351f13fe535648b800630242e4a36, type: 2}
     - target: {fileID: -7391709649950539904, guid: 367d4019c4702b0488ff2db85ffcc90b,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7391709649950539904, guid: 367d4019c4702b0488ff2db85ffcc90b,
+        type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 02b351f13fe535648b800630242e4a36, type: 2}
@@ -1748,6 +1758,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: 02b351f13fe535648b800630242e4a36, type: 2}
+    - target: {fileID: -2496554373281631670, guid: 367d4019c4702b0488ff2db85ffcc90b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -1147648747881708632, guid: 367d4019c4702b0488ff2db85ffcc90b,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -2843,7 +2858,7 @@ GameObject:
   - component: {fileID: 1371868457}
   - component: {fileID: 1371868456}
   m_Layer: 0
-  m_Name: Spline
+  m_Name: RoadSpline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6927,9 +6942,9 @@ SceneRoots:
   - {fileID: 220389894}
   - {fileID: 1378022479}
   - {fileID: 1431486635}
-  - {fileID: 1371868457}
   - {fileID: 1655789880}
   - {fileID: 2096123081}
   - {fileID: 1510147503}
   - {fileID: 937184658}
+  - {fileID: 1371868457}
   - {fileID: 1139405604}
