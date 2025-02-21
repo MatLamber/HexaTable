@@ -55,8 +55,11 @@ public class StackController : MonoBehaviour
 
     private void ManageMouseDrag()
     {
+        Ray ray = GetClickedRay();
+        Debug.DrawRay(ray.origin, ray.direction * 3000, Color.green);
         RaycastHit hit;
-        Physics.Raycast(GetClickedRay(), out hit, 1000, gridHexagonLayer);
+        Physics.Raycast(ray, out hit, 1000, gridHexagonLayer);
+        
         if (hit.collider == null)
         {
             DraggingAboveGround();
@@ -104,9 +107,9 @@ public class StackController : MonoBehaviour
             return;
         }
 
-        Vector3 stackTargetPosition = hit.point.With(y: 1.8f);
+        Vector3 stackTargetPosition = hit.point.With(y: 1.05f);
         currentStack.transform.position =
-            Vector3.MoveTowards(currentStack.transform.position, stackTargetPosition, Time.deltaTime * 30);
+            Vector3.MoveTowards(currentStack.transform.position, stackTargetPosition + new Vector3(0,0,-1.3f), Time.deltaTime * 30);
         targetCell = null;
     }
 
